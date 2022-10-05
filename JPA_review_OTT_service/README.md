@@ -1,6 +1,6 @@
 JDBC API를 활용한 DB연동 review project
 
-2022. 08. 16 
+2022.08.16 
 
 <h1>🎞OTT service 기능 따라하기</h1>
 
