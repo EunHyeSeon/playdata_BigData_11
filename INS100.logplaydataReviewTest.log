@@ -1,0 +1,11 @@
+[2022-08-16 14:33:00,399] [DEBUG] [OttService.java:45] - kimHS회원님이 로그인하셨습니다.
+[2022-08-16 15:39:04,757] [DEBUG] [OttService.java:45] - abc회원님이 로그인하셨습니다.
+[2022-08-16 15:39:30,133] [DEBUG] [OttService.java:151] - 탑건검색 하셨습니다.
+[2022-08-16 15:40:10,889] [DEBUG] [OttService.java:95] - abc회원님이 로그아웃하셨습니다.
+[2022-08-16 15:40:22,193] [DEBUG] [OttService.java:45] - abc회원님이 로그인하셨습니다.
+[2022-08-16 15:40:47,815] [DEBUG] [OttService.java:250] - abc님이 탈퇴하셨습니다. 
+[2022-08-16 16:38:53,265] [DEBUG] [OttService.java:45] - kimMH회원님이 로그인하셨습니다.
+[2022-08-16 16:39:39,267] [DEBUG] [OttService.java:151] - 탑건검색 하셨습니다.
+[2022-08-16 16:39:56,366] [DEBUG] [OttService.java:95] - kimMH회원님이 로그아웃하셨습니다.
+[2022-08-16 16:40:08,699] [DEBUG] [OttService.java:45] - kimMH회원님이 로그인하셨습니다.
+[2022-08-16 16:40:38,010] [DEBUG] [OttService.java:250] - kimMH님이 탈퇴하셨습니다. 
