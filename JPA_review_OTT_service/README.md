@@ -11,3 +11,6 @@ JDBC API를 활용한 DB연동 review project
 
 Notion 
 https://www.notion.so/OTT_Project-ae7647b58dbd4771ac155c58fbfa13ad
+
+
+db.properties 제외
