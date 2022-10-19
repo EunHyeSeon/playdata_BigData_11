@@ -8,3 +8,5 @@ MySQL에 존재하는 emp table을 CRUD하는 기능 구현
 
 ![image](https://user-images.githubusercontent.com/100753335/196572240-2fa56223-0e8c-45b2-be83-853e5b836f23.png)
 
+!
+db.properties, log4j.properties path 수정
