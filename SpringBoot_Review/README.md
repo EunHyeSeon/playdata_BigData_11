@@ -1,1 +1,1 @@
-project for spring boot review
+This project is for spring boot review
