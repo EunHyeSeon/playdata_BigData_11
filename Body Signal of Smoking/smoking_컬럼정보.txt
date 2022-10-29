@@ -1,0 +1,27 @@
+gender 성별
+age 나이
+height(cm) 키
+weight(kg) 몸무게
+waist(cm) 허리둘레
+eyesight(left) 왼쪽시력
+eyesight(right) 오른쪽시력
+hearing(left) 왼쪽 청력
+hearing(right 오른쪽 청력
+systolic 최고혈압 90mmhg~140mmhg
+relaxation 최저혈압
+fasting blood sugar 공복혈당, 정상: 70~100mg/dl, 60세이상: 110mg/dl이하
+triglyceride 트리글리세리드(혈중 지방 성분), 정상: 30~139mg/dl
+Cholesterol 클레스테롤  정상: 0 ~ 240mg/dl
+HDL 고밀도 콜레스테롤, 정상-남자:35~55mg/dl, 여자:45~65mg/dl
+LDL 저밀도 콜레스테롤, 정상:  0 ~ 130mg/dl
+hemoglobin 적혈구, 남자:13g/dl, 여자:12g/dl이하 빈혈
+Urine protein 뇨단백, 양성: 10이상 (신장)
+serum creatinine 혈청크레아티닌, 정상-남자:0.61~1.04mg/dl, 여자:0.47~0.79mg/dl(신장)
+AST 알스파르테이트/아미노전달효소(간), 정상: 10~35IU/L
+ALT 알라닌/아미노전이효소(간), 정상: ~40IU/L
+GTP 글루타미르트랜스탭티다이제(간 세포가 망가지면 농도가 높아짐)
+       정상-남자:50IU/L이하, 여자:32IU/L이하
+oral 구강진찰여부
+dental caries 충치 여부
+tartar 치석 여부
+smoking 흡연여부
