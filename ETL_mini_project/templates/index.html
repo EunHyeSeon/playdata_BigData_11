@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <title>Let's trade</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}"> 
+</head>
+
+<body>
+
+    <div id="banner">
+    <p>2013년</p>
+    <h1>가상 화폐 조회하기</h1>
+    </div>
+
+    <div id="name_table" style="text-align:center"></div>
+    <br> <br>
+
+
+    <h3>코인 정보 보기</h3>
+    <i class='fab fa-bitcoin' style='font-size:24px'></i><b> 코인 </b> <input type="text" id="name">
+    <button id="selectCoin" onclick="selectCoin()">조회</button>
+    <div id="curve_chart" class="chart" style="text-align:left"></div>
+
+    <script>
+
+        function selectCoin() {
+            let data = null;
+            document.getElementById("curve_chart").style.width = "900px";
+            document.getElementById("curve_chart").style.height = "400px";
+            const xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    rawdata = this.responseText;
+                    data = JSON.parse(rawdata)
+                    google.charts.load('current', { 'packages': ['corechart'] });
+                    google.charts.setOnLoadCallback(drawChart);
+
+                    function drawChart() {
+                        let rows = [['Date', '시작가', '종가']];
+                        Object.keys(data).forEach(i => {
+                            rows.push([data[i].date, data[i].open, data[i].close])
+                        });
+                        let logic = google.visualization.arrayToDataTable(rows);
+                        let options = {
+                            title: 'Price',
+                            curveType: 'function',
+                            legend: { position: 'top' }
+                        };
+
+                        let chart = new google.visualization.LineChart(document.getElementById('curve_chart'));;
+                        chart.draw(logic, options);
+                    }
+                }
+            };
+            xhttp.open("POST", "select");
+            xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded")
+            xhttp.send("name=" + document.getElementById("name").value);
+        }
+    </script>
+
+
+    <h5></h5>
+    <button onclick="minmaxCoin()">최고가 최저가 검색</button>
+
+    <br>
+    <br>
+    <div id="chart_div" class="select_chart"></div>
+    <br> <br>
+
+    <script>
+        function minmaxCoin() {
+            let data = null;
+            const xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    data = this.responseText;
+                    data = JSON.parse(data)
+                    console.log(data)
+                    google.charts.load('current', { 'packages': ['bar'] });
+                    google.charts.setOnLoadCallback(drawChart);
+
+                    function drawChart() {
+                        let logic = google.visualization.arrayToDataTable([
+                            ['Date', data[0].name],
+                            [data[1].date_low, data[1].low],
+                            [data[0].date_high, data[0].high]
+                        ]);
+
+                        let options = {
+                            chart: {
+                                title: data[0].name + '의 최고점과 최저점'
+                            },
+                            bars: 'horizontal', // Required for Material Bar Charts.
+                            hAxis: { format: 'decimal' },
+                            height: 200,
+                            colors: ['#d69729', '#f7b33b']
+                        };
+
+                        let chart = new google.charts.Bar(document.getElementById('chart_div'));
+
+                        chart.draw(logic, google.charts.Bar.convertOptions(options));
+                    }
+                }
+            };
+            xhttp.open("POST", "minmax");
+            xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded")
+            xhttp.send("name=" + document.getElementById("name").value);
+        }
+
+        function selectname() {
+            document.getElementById("name_table").style.margin = "100px 0 0 0";
+            const xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    data = this.responseText;
+                    data = JSON.parse(data)
+                    google.charts.load('current', { 'packages': ['table'] });
+                    google.charts.setOnLoadCallback(drawTable);
+
+                    function drawTable() {
+                        let logic = new google.visualization.DataTable();
+                        logic.addColumn('string', '가상화폐 종류');
+                        let rows = [];
+                        Object.keys(data).forEach(i => {
+                            rows.push([data[i].name])
+                        });
+                        logic.addRows(rows);
+
+                        var table = new google.visualization.Table(document.getElementById('name_table'));
+
+                        table.draw(logic, { showRowNumber: true, width: '500px', height: '150px' });
+                    }
+                }
+            }
+            xhttp.open("GET", "/intro");
+            xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded")
+            xhttp.send();
+        }
+        window.onload = function () {
+            selectname();
+        }
+
+    </script>
+
+</body>
+
+</html>
