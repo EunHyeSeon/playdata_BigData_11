@@ -1,5 +1,4 @@
-<h3>kaggle의 Body Signal of smoking 데이터 셋을 활용하여 시각화하고 머신러닝을 통해 흡연자를 예측한</h3>
-<h2>Data Analysis Project</h2>
+<h3>kaggle의 Body Signal of smoking 데이터 셋을 활용하여 시각화하고 머신러닝을 통해 흡연자를 예측한 Data Analysis Project</h3>
 
 # Body signal of smoking 
 Mini project to Data Analysis
