@@ -7,8 +7,8 @@ From https://www.kaggle.com/datasets/kukuroo3/body-signal-of-smoking?resource=do
 This dataset is a collection of basic health biological signal data.
 The goal is to determine the presence or absence of smoking through bio-signals.
 
-기본적인 건강 생체 신호 데이터의 모음입니다.
-이 데이터를 분석함으로써 여러가지 생체 신호를 통해 흡연 여부를 판별하고자 하였습니다.
+기본적인 건강 생체 신호 데이터의 모음 ->
+이 데이터를 분석함으로써 여러가지 생체 신호를 통해 흡연 여부를 판별하고자 다.
 
 The dataset is divided into type.
 
@@ -46,29 +46,37 @@ data shape : (55692, 27)
 - tartar : tartar status
 - smoking
 
+### Ratio of Data
 
-저희는 라벨의 균형을 보기 위해 라벨인 흡연여부에 대해 파이차트를 이용하여 시각화 하였습니다.
-라벨은 흡연이 36.73프로, 비흡연이 63.2755692프로로 이루어져있습니다. 
- 또한 gender에 따른 흡연 비율도 파이차트를 이용하여 시각화하였습니다.
 
-생체 신호 데이터를 사용하여 몇가지 질병에 따른 시각화를 진행하였습니다.
-공복혈당 feature로 당뇨에 걸린 사람들을 파악할 수 있습니다.
-당뇨에 따른 흡연 여부를 bar그래프로 시각화 하였으며 
-60대 이상에서는 당뇨에 안걸린 사람의 흡연 비율이 더 높았고
-20대 이상 60대 미만에서도 안걸린 사람의 흡연 비율이 더 높았습니다.
+#### 01. Smoking Ratio <br/>
+![image](https://user-images.githubusercontent.com/100753335/202114374-62b06b06-17e8-4ca6-bebe-dd622853e53a.png) 
+####  🚬 흡연 비율 36.7% <br/> 
+####  🚭 비흡연 비율 63.3% <br/>
 
-다음은 최고혈압 및 최저혈압으로 고혈압에 따른 흡연여부를 bar그래프로 시각화 하였습니다.
-당뇨와 비슷하게 고혈압에서도 고혈압이 아닌 사람의 흡연 비율이 더 높았습니다.
+#### 02. Ratio by Gender <br/>
+![image](https://user-images.githubusercontent.com/100753335/202114297-399351c6-46dd-43dc-bb2a-7bdd348e123a.png) <br/>
+#### 🕺 남자 63.6% <br/>
+#### 💃 여자 36.4% <br/>
 
-마지막으로는 빈혈에 따른 흡연여부를 bar그래프로 시각화 하였습니다.
-빈혈은 적혈구 수치 데이터로 파악 가능하며 남자와 여자 모두 빈혈이 걸리지 않은 사람의
-흡연 비율이 더 높게 나왔습니다.
+#### 03. Smoking Ratio by Gender <br/>
+![image](https://user-images.githubusercontent.com/100753335/202116084-ce83e3cd-5652-4a96-a944-e7aecf795d9d.png) <br/>
+
+### fasting blood sugar에 따른 흡연 유무 <br/>
+![image](https://user-images.githubusercontent.com/100753335/202117250-e7f1d369-af46-4d29-9635-1f751473439c.png) <br/>
+
+
+###  빈혈에 따른 흡연 유무 <br/>
+![image](https://user-images.githubusercontent.com/100753335/202117380-d4c80d73-9483-4c16-ade2-29b4e6a7a5ce.png) <br/>
+
+### 고혈압에 따른 흡연 유무 <br/>
+![image](https://user-images.githubusercontent.com/100753335/202117561-406961c5-82df-4409-a40d-e65252591a0d.png) <br/>
 
 앞의 데이터 시각화들로 인해 당뇨, 고혈압, 빈혈은 흡연에 영향이 거의 없다는것을 알 수 있엇습니다.
 
-다음은 데이터 전처리입니다.
-데이터 분석을 하기 전 결측치확인, 데이터 인코더, 이상치 확인 3가지 방법으로 
-데이터 전처리를 진행하였습니다
+### Data Preprocessing
+
+#### 결측치 확인
 
 결측치 확인 결과 결측치는 없었고 feature oral은 값이 하나로만 이루어져 있어 삭제 하였습니다.
 gender와 tartar feature은 object 타입으로 이루어져 있고 값이 두가지로만 이루어져있어서
