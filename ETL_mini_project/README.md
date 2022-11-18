@@ -6,7 +6,7 @@
 ### What is ETL..?
 ![image](https://user-images.githubusercontent.com/100753335/201651728-ab5f76e1-016c-4294-9878-80a0ddf41ba7.png)
 
-ETL stands for Extract, Transform and Load.
+데이터를 추출(Extract), 가공(Transform), 반환(Load) 하는 것
 
 ### DB
 ![image](https://user-images.githubusercontent.com/100753335/202641242-aed81cba-0443-4c6b-8f1a-2b630d427f80.png)
